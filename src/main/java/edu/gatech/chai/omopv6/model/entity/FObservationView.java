@@ -36,7 +36,7 @@ import net.jcip.annotations.Immutable;
 
 @Entity
 @Immutable
-@Table(name="f_observation_view")
+@Table(name="observation")
 public class FObservationView extends BaseEntity {
 	@Id
 	@Column(name="observation_id")

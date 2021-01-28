@@ -28,7 +28,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "concept")
+@Table(name = "concept", schema = "omop_vocabulary")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Concept extends BaseEntity {
 

@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="concept_class")
+@Table(name="concept_class", schema = "omop_vocabulary")
 public class ConceptClass extends BaseEntity {
 	@Id
 	@Column(name="concept_class_id", nullable=false)

@@ -31,7 +31,12 @@
 		<hibernate_version>5.4.21.Final</hibernate_version>
 		<spring_version>5.2.4.RELEASE</spring_version>
 	</properties>
-
+	<repositories>
+		<repository>
+			<id>redshift</id>
+			<url>https://s3.amazonaws.com/redshift-maven-repository/release</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -53,6 +58,12 @@
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.20.0-GA</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.amazon.redshift/redshift-jdbc42 -->
+		<dependency>
+			<groupId>com.amazon.redshift</groupId>
+			<artifactId>redshift-jdbc42</artifactId>
+			<version>1.2.43.1067</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>

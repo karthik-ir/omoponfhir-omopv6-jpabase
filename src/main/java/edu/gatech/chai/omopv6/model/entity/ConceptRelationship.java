@@ -29,7 +29,7 @@ import javax.persistence.Table;
 import net.jcip.annotations.Immutable;
 
 @Entity
-@Table(name="concept_relationship")
+@Table(name="concept_relationship", schema = "omop_vocabulary")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class ConceptRelationship extends BaseEntity implements Serializable {
 	/**

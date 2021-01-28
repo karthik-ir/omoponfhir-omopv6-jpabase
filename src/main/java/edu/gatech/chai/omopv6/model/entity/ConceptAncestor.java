@@ -31,7 +31,7 @@ import net.jcip.annotations.Immutable;
 
 @Entity
 @Immutable
-@Table(name="concept_ancestor")
+@Table(name="concept_ancestor", schema = "omop_vocabulary")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class ConceptAncestor extends BaseEntity implements Serializable {
 	/**

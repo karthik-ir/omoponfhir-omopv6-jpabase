@@ -81,10 +81,10 @@ public class VisitOccurrence extends BaseEntity {
 	private Concept visitSourceConcept;
 
 	@ManyToOne
-	@JoinColumn(name="admitting_source_concept_id")
+	@JoinColumn(name="admitted_from_concept_id")
 	private Concept admittingSourceConcept;
 
-	@Column(name="admitting_source_value")
+	@Column(name="admitted_from_source_value")
 	private String admittingSourceValue;
 	
 	@ManyToOne
