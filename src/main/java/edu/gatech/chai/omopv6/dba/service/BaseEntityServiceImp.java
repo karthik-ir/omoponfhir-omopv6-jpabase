@@ -384,7 +384,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#searchWithParams(int, int, java.util.List, java.lang.String)
 	 */
-	@Transactional(readOnly = true)
+//	@Transactional(readOnly = true)
 	public List<T> searchWithParams(int fromIndex, int toIndex, List<ParameterWrapper> paramList, String sort) {
 		int length = toIndex - fromIndex;
 		EntityManager em = vDao.getEntityManager();
