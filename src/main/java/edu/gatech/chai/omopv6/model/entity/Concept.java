@@ -16,16 +16,11 @@
  *******************************************************************************/
 package edu.gatech.chai.omopv6.model.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "concept", schema = "omop_vocabulary")
@@ -62,10 +57,13 @@ public class Concept extends BaseEntity {
 	@Column(name = "concept_code", nullable=false)
 	private String conceptCode;
 
+	@Convert(converter = MyDateAttributeConverter.class)
 	@Column(name = "valid_start_date", nullable=false)
 	private Date validStartDate;
 
+
 	@Column(name = "valid_end_date", nullable=false)
+	@Convert(converter = MyDateAttributeConverter.class)
 	private Date validEndDate;
 
 	@Column(name = "invalid_reason")
