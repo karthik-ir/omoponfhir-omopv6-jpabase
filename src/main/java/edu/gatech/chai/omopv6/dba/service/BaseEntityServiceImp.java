@@ -87,7 +87,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#findById(java.lang.Long)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public T findById(Long id) {
 		return vDao.findById(entityClass, id);
 	}
@@ -130,7 +130,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	 * java.lang.String, java.lang.String, java.lang.String,
 	 * edu.gatech.chai.omopv5.model.entity.Location)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<T> searchBySql(int fromIndex, int toIndex, String queryString, Map<String, String> parameters, String sort) {
 		EntityManager em = getEntityDao().getEntityManager();
 
@@ -181,7 +181,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#searchByColumnString(java.lang.String, java.lang.String)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<T> searchByColumnString(String column, String value) {
 		EntityManager em = vDao.getEntityManager();
 		List<T> retvals = new ArrayList<T>();
@@ -207,7 +207,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#searchByColumnString(java.lang.String, java.lang.Long)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<T> searchByColumnString(String column, Long value) {
 		EntityManager em = vDao.getEntityManager();
 		List<T> retvals = new ArrayList<T>();
@@ -233,7 +233,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#create(edu.gatech.chai.omopv5.model.entity.BaseEntity)
 	 */
-	@Transactional
+	//@Transactional
 	public T create(T entity) {
 		vDao.add(entity);
 		return entity;
@@ -242,7 +242,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#removeById(java.lang.Long)
 	 */
-	@Transactional
+	//@Transactional
 	public Long removeById(Long id) {
 		return vDao.delete(entityClass, id);
 	}
@@ -250,7 +250,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#update(edu.gatech.chai.omopv5.model.entity.BaseEntity)
 	 */
-	@Transactional
+	//@Transactional
 	public T update(T entity) {
 		vDao.merge(entity);
 		return entity;
@@ -259,7 +259,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#getSize()
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public Long getSize() {
 		EntityManager em = vDao.getEntityManager();
 		CriteriaBuilder builder = em.getCriteriaBuilder();
@@ -286,7 +286,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#getSize(java.util.List)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public Long getSize(List<ParameterWrapper> paramList) {
 		// Construct predicate from this map.
 		EntityManager em = vDao.getEntityManager();
@@ -303,7 +303,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 		return em.createQuery(query).getSingleResult();
 	}
 	
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
  	public Long getSize(String queryString, Map<String, String> parameters) {
  		EntityManager em = getEntityDao().getEntityManager();
 
@@ -350,7 +350,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#searchWithoutParams(int, int, java.lang.String)
 	 */
-	@Transactional(readOnly = true)
+//	//@Transactional(readOnly = true)
 	public List<T> searchWithoutParams(int fromIndex, int toIndex, String sort) {
 		int length = toIndex - fromIndex;
 		EntityManager em = vDao.getEntityManager();		
@@ -384,7 +384,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.IService#searchWithParams(int, int, java.util.List, java.lang.String)
 	 */
-//	@Transactional(readOnly = true)
+//	//@Transactional(readOnly = true)
 	public List<T> searchWithParams(int fromIndex, int toIndex, List<ParameterWrapper> paramList, String sort) {
 		int length = toIndex - fromIndex;
 		EntityManager em = vDao.getEntityManager();
@@ -415,6 +415,7 @@ public abstract class BaseEntityServiceImp<T extends BaseEntity, V extends BaseE
 					.getResultList();
 		}
 		return retvals;
+
 	}
 
 }

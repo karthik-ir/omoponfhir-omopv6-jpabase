@@ -32,7 +32,7 @@ public class FactRelationshipServiceImp extends BaseEntityServiceImp<FactRelatio
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.FactRelationshipService#searchMeasurementUsingMethod(java.lang.Long)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public <V extends BaseEntity> List<V> searchMeasurementUsingMethod(Long domainId) {
 		List<V> retVal = new ArrayList<V>();
 
@@ -69,7 +69,7 @@ public class FactRelationshipServiceImp extends BaseEntityServiceImp<FactRelatio
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.FactRelationshipService#searchMeasurementContainsComments(java.lang.Long)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<Note> searchMeasurementContainsComments(Long domainId) {
 		List<Note> retVal = new ArrayList<Note>();
 
@@ -92,7 +92,7 @@ public class FactRelationshipServiceImp extends BaseEntityServiceImp<FactRelatio
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.FactRelationshipService#searchFactRelationship(java.lang.Long, java.lang.Long, java.lang.Long, java.lang.Long, java.lang.Long)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<FactRelationship> searchFactRelationship(Long domainConcept1, Long factId1, Long domainConcept2,
 			Long factId2, Long relationshipId) {
 

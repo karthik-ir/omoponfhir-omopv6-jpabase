@@ -19,18 +19,7 @@ package edu.gatech.chai.omopv6.model.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import net.jcip.annotations.Immutable;
 
@@ -60,6 +49,7 @@ public class FObservationView extends BaseEntity {
 	private Date observationDateTime;
 
 	@Column(name = "observation_time")
+	@Transient
 	private String observationTime;
 
 	@Column(name = "value_as_string")
@@ -68,8 +58,8 @@ public class FObservationView extends BaseEntity {
 	@Column(name = "value_as_number")
 	private Double valueAsNumber;
 
-	@ManyToOne(cascade = { CascadeType.MERGE })
-	@JoinColumn(name = "value_as_concept_id")
+	@ManyToOne(cascade = { CascadeType.MERGE }, fetch=FetchType.LAZY)
+	@JoinColumn(name = "value_as_concept_id", nullable = true)
 	private Concept valueAsConcept;
 
 	@ManyToOne(cascade = { CascadeType.MERGE })
@@ -106,15 +96,19 @@ public class FObservationView extends BaseEntity {
 	private String unitSourceValue;
 
 	@Column(name = "range_low")
+	@Transient
 	private BigDecimal rangeLow;
 
 	@Column(name = "range_high")
+	@Transient
 	private BigDecimal rangeHigh;
 	
 	@Column(name = "value_source_value")
+	@Transient
 	private String valueSourceValue;
 
 	@ManyToOne(cascade = { CascadeType.MERGE }, fetch=FetchType.LAZY)
+	@Transient
 	@JoinColumn(name = "observation_operator_concept_id")
 	private Concept observationOperatorConcept;
 

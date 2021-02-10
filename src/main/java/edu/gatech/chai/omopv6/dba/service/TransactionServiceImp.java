@@ -70,7 +70,7 @@ public class TransactionServiceImp implements TransactionService {
 	/* (non-Javadoc)
  * @see edu.gatech.chai.omopv5.dba.service.TransactionService#writeTransaction(java.util.Map)
  */
-@Transactional
+//@Transactional
 	public int writeTransaction(Map<String, List<BaseEntity>> transactionMap) {
 //		EntityManager em = transactionDao.getEntityManager();
 

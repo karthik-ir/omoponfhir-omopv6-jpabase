@@ -16,7 +16,7 @@
  *******************************************************************************/
 package edu.gatech.chai.omopv6.model.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;

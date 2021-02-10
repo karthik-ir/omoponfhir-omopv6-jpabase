@@ -45,7 +45,7 @@ public class FPersonServiceImp extends BaseEntityServiceImp<FPerson, FPersonDao>
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.FPersonService#searchByNameAndLocation(java.lang.String, java.lang.String, java.lang.String, edu.gatech.chai.omopv5.model.entity.Location)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public FPerson searchByNameAndLocation(String familyName, String given1Name, String given2Name, Location location) {
 		EntityManager em = getEntityDao().getEntityManager();
 		String queryString = "SELECT t FROM FPerson t WHERE";

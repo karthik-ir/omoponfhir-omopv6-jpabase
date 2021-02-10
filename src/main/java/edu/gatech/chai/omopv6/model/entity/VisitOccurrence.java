@@ -18,17 +18,7 @@ package edu.gatech.chai.omopv6.model.entity;
 
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -76,8 +66,8 @@ public class VisitOccurrence extends BaseEntity {
 	@Column(name="visit_source_value")
 	private String visitSourceValue;
 	
-	@ManyToOne
-	@JoinColumn(name="visit_source_concept_id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="visit_source_concept_id", nullable = true)
 	private Concept visitSourceConcept;
 
 	@ManyToOne

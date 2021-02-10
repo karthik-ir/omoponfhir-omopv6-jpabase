@@ -43,7 +43,7 @@ public class LocationServiceImp extends BaseEntityServiceImp<Location, LocationD
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.LocationService#searchByAddress(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public Location searchByAddress(String line1, String line2, String city, String state, String zipCode) {
 		EntityManager em = getEntityDao().getEntityManager();
 		String query;

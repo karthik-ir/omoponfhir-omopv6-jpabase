@@ -45,7 +45,7 @@ public class ConceptServiceImp extends BaseEntityServiceImp<Concept, ConceptDao>
 	/* (non-Javadoc)
 	 * @see edu.gatech.chai.omopv5.dba.service.ConceptService#getIngredient(edu.gatech.chai.omopv5.model.entity.Concept)
 	 */
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<Concept> getIngredient(Concept concept) {
 		EntityManager em = getEntityDao().getEntityManager();
 		

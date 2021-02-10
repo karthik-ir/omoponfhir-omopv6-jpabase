@@ -26,7 +26,7 @@ import edu.gatech.chai.omopv6.model.entity.FObservationView;
 /**
  * The Interface FObservationViewService.
  */
-@Transactional
+//@Transactional
 public interface FObservationViewService extends IService<FObservationView> {
 	
 	/**

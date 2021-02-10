@@ -54,7 +54,7 @@ public class DeviceExposureServiceImp extends BaseEntityServiceImp<DeviceExposur
  	 * java.lang.String, java.lang.String, java.lang.String,
  	 * edu.gatech.chai.omopv5.model.entity.Location)
  	 */
- //	@Transactional(readOnly = true)
+ //	//@Transactional(readOnly = true)
  //	public DrugExposure searchBySql(String queryString, Map<String, String> parameters) {
  //		EntityManager em = getEntityDao().getEntityManager();
  //
