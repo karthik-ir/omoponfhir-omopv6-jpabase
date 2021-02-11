@@ -72,7 +72,6 @@ public class Person extends BaseEntity {
 	private Provider provider;
 
 	@ManyToOne
-	@Transient
 	@JoinColumn(name="care_site_id")
 	private CareSite careSite;
 	
