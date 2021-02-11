@@ -52,6 +52,7 @@ public class Concept extends BaseEntity {
 	private String conceptClassId;
 
 	@Column(name = "standard_concept")
+	@Transient
 	private Character standardConcept;
 
 	@Column(name = "concept_code", nullable=false)

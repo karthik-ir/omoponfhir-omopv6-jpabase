@@ -18,20 +18,7 @@ package edu.gatech.chai.omopv6.model.entity;
 
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Index;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(
@@ -80,6 +67,7 @@ public class Person extends BaseEntity {
 	private Location location;
 	
 	@ManyToOne
+	@Transient
 	@JoinColumn(name="provider_id")
 	private Provider provider;
 

@@ -18,20 +18,7 @@ package edu.gatech.chai.omopv6.model.entity;
 
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Index;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 @Entity
 @Table(
@@ -71,21 +58,26 @@ public class ProcedureOccurrence extends BaseEntity {
 	private Concept procedureTypeConcept;
 
 	@ManyToOne
+	@Transient
 	@JoinColumn(name = "modifier_concept_id")
 	private Concept modifierConcept;
 	
 	@Column(name="quantity")
+	@Transient
 	private Long quantity;
 	
 	@ManyToOne
+	@Transient
 	@JoinColumn(name = "provider_id")
 	private Provider provider;
 
 	@ManyToOne
+	@Transient
 	@JoinColumn(name = "visit_occurrence_id")
 	private VisitOccurrence visitOccurrence;
 
 	@ManyToOne
+	@Transient
 	@JoinColumn(name = "visit_detail_id")
 	private VisitDetail visitDetail;
 
@@ -97,6 +89,7 @@ public class ProcedureOccurrence extends BaseEntity {
 	private Concept procedureSourceConcept;
 
 	@Column(name = "modifier_source_value")
+	@Transient
 	private String modifierSourceValue;
 
 	public ProcedureOccurrence() {
