@@ -18,20 +18,7 @@ package edu.gatech.chai.omopv6.model.entity;
 
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Index;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 @Entity
 @Table(
@@ -75,6 +62,7 @@ public class Measurement extends BaseEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "operator_concept_id")
+	@Transient
 	private Concept operatorConcept;
 
 	@Column(name = "value_as_number")
@@ -96,14 +84,17 @@ public class Measurement extends BaseEntity {
 
 	@ManyToOne
 	@JoinColumn(name="provider_id")
+	@Transient
 	private Provider provider;
 
-	@ManyToOne
-	@JoinColumn(name = "visit_occurrence_id")
-	private VisitOccurrence visitOccurrence;
+	// todo: handle visit occurrence
+//	@ManyToOne
+//	@JoinColumn(name = "visit_occurrence_id")
+//	private VisitOccurrence visitOccurrence;
 
 	@ManyToOne
 	@JoinColumn(name = "visit_detail_id")
+	@Transient
 	private VisitDetail visitDetail;
 
 	@Column(name="measurement_source_value")
@@ -231,13 +222,13 @@ public class Measurement extends BaseEntity {
 		this.provider = provider;
 	}
 
-	public VisitOccurrence getVisitOccurrence() {
-		return visitOccurrence;
-	}
-	
-	public void setVisitOccurrence (VisitOccurrence visitOccurrence) {
-		this.visitOccurrence = visitOccurrence;
-	}
+//	public VisitOccurrence getVisitOccurrence() {
+//		return visitOccurrence;
+//	}
+//
+//	public void setVisitOccurrence (VisitOccurrence visitOccurrence) {
+//		this.visitOccurrence = visitOccurrence;
+//	}
 	
 	public VisitDetail getVisitDetail() {
 		return this.visitDetail;
