@@ -18,20 +18,7 @@ package edu.gatech.chai.omopv6.model.entity;
 
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 @Entity
 @Table(name="drug_exposure")
@@ -76,18 +63,23 @@ public class DrugExposure extends BaseEntity {
 	private Concept drugTypeConcept;
 	
 	@Column(name = "stop_reason")
+	@Transient
 	private String stopReason;
 
 	@Column(name = "refills")
+	@Transient
 	private Integer refills;
 
 	@Column(name = "quantity")
+	@Transient
 	private Double quantity;
 
 	@Column(name = "days_supply")
+	@Transient
 	private Integer daysSupply;
 	
 	@Column (name = "sig")
+	@Transient
 	private String sig;
 	
 	@ManyToOne
@@ -95,6 +87,7 @@ public class DrugExposure extends BaseEntity {
 	private Concept routeConcept;
 	
 	@Column(name = "lot_number")
+	@Transient
 	private String lotNumber;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -107,6 +100,7 @@ public class DrugExposure extends BaseEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "visit_detail_id")
+	@Transient
 	private VisitDetail visitDetail;
 
 	@Column(name = "drug_source_value")
@@ -120,6 +114,7 @@ public class DrugExposure extends BaseEntity {
 	private String routeSourceValue;
 	
 	@Column(name = "dose_unit_source_value")
+	@Transient
 	private String doseUnitSourceValue;
 	
 	
