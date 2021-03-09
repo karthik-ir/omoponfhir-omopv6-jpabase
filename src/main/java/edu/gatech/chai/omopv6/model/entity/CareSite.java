@@ -30,7 +30,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="care_site")
+@Table(name="care_site_temp")
 //@NamedQueries(value={
 //		@NamedQuery(name="loadCareSiteReference", query="select c.id from CareSite c WHERE c.organization.id = :serviceProvider AND c.location.id = :location")
 //})
