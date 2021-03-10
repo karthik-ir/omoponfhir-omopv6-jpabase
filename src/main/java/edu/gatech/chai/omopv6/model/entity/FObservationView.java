@@ -68,6 +68,7 @@ public class FObservationView extends BaseEntity {
 
 	@ManyToOne(cascade = { CascadeType.MERGE })
 	@JoinColumn(name = "provider_id")
+	@Transient
 	private Provider provider;
 
 	@ManyToOne(cascade = { CascadeType.MERGE }, fetch=FetchType.LAZY)
