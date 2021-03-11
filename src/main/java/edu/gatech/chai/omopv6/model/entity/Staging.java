@@ -23,7 +23,7 @@ public class Staging extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name="stage_class_concept_id", nullable=false)
-    private Concept stageClassConcept;
+    private Concept observationConcept;
 
     @ManyToOne
     @JoinColumn(name="stage_class_source_concept_id", nullable=false)
@@ -86,11 +86,11 @@ public class Staging extends BaseEntity {
     }
 
     public Concept getStageClassConcept() {
-        return stageClassConcept;
+        return observationConcept;
     }
 
     public void setStageClassConcept(Concept stageClassConcept) {
-        this.stageClassConcept = stageClassConcept;
+        this.observationConcept = stageClassConcept;
     }
 
     public Concept getStageClassSourceConcept() {

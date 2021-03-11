@@ -42,7 +42,7 @@ public class Measurement extends BaseEntity {
 
 	@ManyToOne
 	@JoinColumn(name="measurement_concept_id", nullable=false)
-	private Concept measurementConcept;
+	private Concept observationConcept;
 
 	@Column(name = "measurement_date")
 	@Temporal(TemporalType.DATE)
@@ -127,11 +127,11 @@ public class Measurement extends BaseEntity {
 	}
 	
 	public Concept getMeasurementConcept() {
-		return measurementConcept;
+		return observationConcept;
 	}
 	
 	public void setMeasurementConcept(Concept measurementConcept) {
-		this.measurementConcept = measurementConcept;
+		this.observationConcept = measurementConcept;
 	}
 	
 	public Date getMeasurementDate() {
